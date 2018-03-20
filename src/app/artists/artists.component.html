@@ -1,0 +1,11 @@
+<h1>Artistas</h1>
+<h2>Welcome {{user.name}}</h2>
+<form (submit)="searchArtist()">
+	<input [(ngModel)]="artistName" type="text" name="artist" placeholder="Nombre del artista">
+	<button class="btn btn-primary">Buscar</button>
+</form>
+<ul>
+	<li *ngFor="let artist of artists">
+		<a style="color:green" routerLink="/artists/{{artist.name}}/albums">{{artist.name}}</a>
+	</li>
+</ul>

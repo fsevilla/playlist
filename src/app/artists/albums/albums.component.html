@@ -1,0 +1,8 @@
+<a routerLink="/artists" class="btn btn-primary">Go back</a>
+<p>{{artistName}} Albums!</p>
+
+<ul>
+	<li *ngFor="let album of albums">
+		<a routerLink="/artists/{{artistName}}/albums/{{album.name}}">{{album.name}}</a>
+	</li>
+</ul>

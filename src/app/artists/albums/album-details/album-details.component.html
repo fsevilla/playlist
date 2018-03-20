@@ -1,0 +1,20 @@
+<a (click)="goBack()" class="btn btn-default">Go back</a>
+
+<div spinner="{{dataLoaded}}" *ngIf="dataLoaded">
+	<h1>{{albumDetails.name}}</h1>
+	<h2>Artist: {{albumDetails.artist}}</h2>
+	<img src="{{albumDetails.image[2]['#text']}}" alt="">
+	<span *ngIf="!dataLoaded">Cargando...</span>
+	<div *ngIf="albumDetails.wiki">
+		<p>
+			<b>Published: </b> {{albumDetails.wiki.published}}
+		</p>
+		<div [innerHTML]="albumDetails.wiki.summary"></div>
+	</div>
+	<div *ngIf="!albumDetails.wiki">No hay descripcion</div>
+	<ul>
+		<li *ngFor="let track of albumDetails.tracks.track">
+			{{track.name}}
+		</li>
+	</ul>
+</div>

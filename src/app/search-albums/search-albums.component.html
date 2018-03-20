@@ -1,0 +1,11 @@
+<h2>Buscar Album</h2>
+<form (submit)="getAlbums()">
+	<input [(ngModel)]="album" type="text" name="album">
+	<button class="btn btn-primary">Buscar</button>
+</form>
+
+<ul *ngIf="dataLoaded">
+	<li *ngFor="let album of albums">
+		<a routerLink="/artists/{{album.artist}}/albums/{{album.name}}">{{album.name}}</a>
+	</li>
+</ul>
